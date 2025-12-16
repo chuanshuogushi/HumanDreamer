@@ -5,7 +5,7 @@ import torch
 
 
 class TrainTestSampler(torch.utils.data.Sampler):
-    """author: boyuan.wang
+    """
     给定一个总数据集，根据输入的百分比，逐渐控制部分数据加入训练集。
     例子：做scaling law数据集实验时，分别以20%,40%,60%,80%的数据量进行训练。最后0.1%用于测试。"""
     def __init__(self, dataset, batch_size=None, shuffle=True, infinite=True, seed=6666, stage=None, percentage=1):
