@@ -86,7 +86,7 @@ class DITTester(Tester):
             self.vae.to(self.device, dtype=vae_dtype)
 
             #     vae.enable_gradient_checkpointing()
-            vae_weight_path = model_config.get('vae_weight_path', None)  # TODO 这是测试VAE效果用的，之后最好修改名字为test_vae_checkpoint
+            vae_weight_path = model_config.get('vae_weight_path', None)  # 这是测试VAE效果用的
             print('loading vae checkpoint from {}'.format(vae_weight_path))
             vae_ckpt = torch.load(vae_weight_path, map_location='cpu')
             self.vae.load_state_dict(vae_ckpt, strict=True)                
